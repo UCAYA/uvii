@@ -1,0 +1,272 @@
+--- 
+--- 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+$font: "Open Sans",
+sans-serif;
+
+$accentColor: #262938;
+$lightAccentColor: #FFFFFF;
+$darkTextColor: #1d1e2a;
+$textColor: #575756;
+$footerTextColor: #787778;
+$footerSecondaryColor: #B2B2B2;
+$lightTextColor: #FFFFFF;
+$baseMargin: 12px;
+$headerPadding: 56px;
+
+body {
+    background: $lightAccentColor;
+    color: $textColor;
+    font-family: $font;
+    font-size: 10pt;
+    font-weight: 400;
+    margin: 0;
+    padding: $baseMargin;
+}
+
+a {
+    outline: 0;
+    text-decoration: none;
+    img {
+        border: none;
+    }
+}
+
+input {
+    outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+ul
+{
+    list-style-type: square;
+    padding: 0 0 0 $baseMargin * 2;
+    li {
+        font-size: 0.8em;
+        p {
+            display: block;
+            font-size: 1.32em;
+            margin: $baseMargin * 2 0;
+        }
+    }
+}
+
+.btn {
+	color: $accentColor;
+    cursor: pointer;
+	display: inline-block;
+	background: $lightAccentColor;
+    border: 1px solid $accentColor;
+    font-size: 1.35em;
+    font-weight: 700;
+	padding: 16px;
+	outline: none;
+	text-decoration: none;
+    transition: background ease-in-out 0.3s, color ease-in-out 0.4s, border-color ease-in-out 0.4s;
+    &:hover, &:focus {
+        background: $accentColor;
+        border-color: $lightAccentColor;
+        color: $lightAccentColor;
+    }
+    &:disabled, &[disabled], &.disabled {
+        cursor: default;
+        opacity: 0.7;
+        transition: none;
+        background: $lightAccentColor;
+        color: $accentColor;
+    }
+}
+
+header {
+    align-items: center;
+    background: $accentColor;
+    color: $lightTextColor;
+    display: flex;
+    flex-direction: column;
+    padding: $headerPadding;
+    h2 {
+        margin: $headerPadding 0;
+        max-width: 500px;
+        text-align: center;
+    }
+}
+
+article {
+    align-items: center;
+    background: $lightAccentColor;
+    color: $textColor;
+    display: flex;
+    flex-direction: column;
+    padding: $headerPadding;
+
+    .article-content {
+        max-width: 1000px;
+    }
+}
+
+#uvii-presentation {
+    .article-content {
+        align-items: center;
+        background: $lightAccentColor;
+        color: $darkTextColor;
+        display: flex;
+        flex-direction: column;
+    }
+    h3 {
+        margin: 16px 0;
+        max-width: 340px;
+        text-align: center;
+    }
+}
+
+#advantages {
+    color: $textColor;
+    display: flex;
+    > div {
+        flex: 1;
+        margin: $headerPadding 70px;
+    }
+    h4 {
+        font-size: 1.4em;
+        line-height: 1.6;
+        span {
+            background: $accentColor;
+            color: $lightTextColor;    
+            display: inline-block;
+            padding: 0 4px;
+        }
+    }
+}
+
+footer {
+    align-items: center;
+    background: $accentColor;
+    color: $lightTextColor;
+    display: flex;
+    flex-direction: column;
+    padding: $headerPadding $baseMargin $headerPadding $baseMargin;
+    position: relative;
+    .logo-place {
+        span {
+            color: $footerSecondaryColor;
+            display: block;
+            font-size: 0.75em;
+        }
+        img {
+            display: block;
+            margin: 6px auto 0;
+        }
+    }
+    .footer-infos {
+        bottom: 10px;
+        color: $footerTextColor;
+        font-size: 0.75em;
+        left: $baseMargin;
+        position: absolute;
+    }
+    .copyright, .lang-menu {
+        display: inline-block;
+    }
+    .lang-menu {
+        margin: 0 $baseMargin / 2;
+        padding: 0;
+        .lang-link {
+            color: $footerTextColor;
+            margin: 0 $baseMargin / 2;
+        }
+        a {
+            transition: color 0.3s ease-in-out;
+            &:hover, &:focus {
+                color: $footerSecondaryColor;
+            }
+        }
+        span.lang-link {
+            color: $lightTextColor;
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    article {
+        padding: $headerPadding;
+
+        .article-content {
+            max-width: 100%;
+
+            > img
+            {
+                display: block;
+                max-width: 100%;
+            }
+
+        }
+    }
+
+    #advantages {
+        display: block;
+        > div {
+            margin: $headerPadding 0;
+        }
+        h4 {
+            font-size: 1.4em;
+            max-width: 500px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        padding: $baseMargin / 2;
+    }
+
+    header {
+        padding: $baseMargin * 3;
+    }
+
+    article {
+        padding: $baseMargin * 3 $baseMargin;
+    }
+
+    h2, h3 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        font-size: 1.05em;
+        padding: $baseMargin;
+    }
+
+    #advantages {
+        display: block;
+        > div {
+            margin: $baseMargin * 3 0;
+        }
+        h4 {
+            font-size: 1.35em;
+            max-width: 400px;
+        }
+    }
+
+}
